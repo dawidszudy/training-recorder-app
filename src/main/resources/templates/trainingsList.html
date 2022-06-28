@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Workouts List</title>
+    <link rel="stylesheet" th:href="@{/css/main.css}">
+    <link rel="stylesheet" th:href="@{/css/table.css}">
+</head>
+<body>
+<div id="menu">
+    <a th:href="@{/index}" class="menu-item">Main Page</a>
+    <a th:href="@{/saveTraining}" class="menu-item">Add new training</a>
+
+    <div style="clear: both;"></div>
+</div>
+<div id="wrapper">
+    <table class="styled-table">
+        <thead>
+        <tr>
+            <th>Date</th>
+            <th>Kilometers</th>
+            <th>Time (HH:MM:SS)</th>
+            <th>Calories (kCal)</th>
+            <th>average Speed (km/h)</th>
+            <th>Description</th>
+            <th>Edit</th>
+            <th>Remove</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="training : ${trainings}">
+            <td th:text="${training.date}">date</td>
+            <td th:text="${training.amountKilometers}">Kilometers</td>
+            <td th:text="${training.fullTime}">fullTime</td>
+            <td th:text="${training.amountCalories}">Calories</td>
+            <td th:text="${training.averageSpeedTime}">Average speed</td>
+            <td th:text="${training.description}">Description</td>
+            <td><a th:href="@{/trainings/{trainingId}/edit(trainingId=${training.id})}">Edit</a></td>
+            <td><a th:href="@{/trainings/{trainingId}/delete(trainingId=${training.id})}">Remove</a></td>
+
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div class="clear: both;"></div>
+
+</body>
+</html>

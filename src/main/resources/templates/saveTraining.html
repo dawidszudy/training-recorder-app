@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Training</title>
+    <link rel="stylesheet" th:href="@{/css/main.css}">
+</head>
+<body>
+<div id="menu">
+    <a th:href="@{/index}" class="menu-item">Main Page</a>
+    <a th:href="@{/trainingsList}" class="menu-item">Workouts list</a>
+
+    <div style="clear: both;"></div>
+</div>
+
+<div id="form-container">
+    <h1>Add new training</h1>
+    <form method="post" th:action="@{/saveTraining}" th:object="${training}">
+        <input type="hidden" th:field="*{id}">
+        <input type="date" th:field="*{date}">
+        <input type="text" placeholder="Kilometers" th:field="*{amountKilometers}">
+        <input type="text" placeholder="Hours" th:field="*{hours}">
+        <input type="text" placeholder="Minutes" th:field="*{minutes}">
+        <input type="text" placeholder="Seconds" th:field="*{seconds}">
+        <input type="text" placeholder="Calories" th:field="*{amountCalories}">
+        <textarea rows="4" placeholder="description" th:field="*{description}"></textarea>
+
+        <input type="submit" value="Save">
+
+    </form>
+</div>
+
+</body>
+</html>
