@@ -119,7 +119,17 @@ public class Training {
     }
 
     public String getFullTime() {
+        if ( hours == null || minutes == null || seconds == null) {
+            return null;
+        }
         return hours + ":" + minutes + ":" + seconds;
+    }
+
+    public void setFullTime(String fullTime) {
+        String[] table = fullTime.split(":");
+        hours = Integer.valueOf(table[0]);
+        minutes = Integer.valueOf(table[1]);
+        seconds = Integer.valueOf(table[2]);
     }
 
     public String getAverageSpeedTime() {
