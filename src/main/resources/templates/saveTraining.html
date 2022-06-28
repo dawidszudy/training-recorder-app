@@ -19,9 +19,11 @@
         <input type="hidden" th:field="*{id}">
         <input type="date" th:field="*{date}">
         <input type="text" placeholder="Kilometers" th:field="*{amountKilometers}">
-        <input type="text" placeholder="Hours" th:field="*{hours}">
-        <input type="text" placeholder="Minutes" th:field="*{minutes}">
-        <input type="text" placeholder="Seconds" th:field="*{seconds}">
+        <div class="time">
+            <input type="text" placeholder="Hours" th:field="*{hours}">
+            <input type="text" placeholder="Minutes" th:field="*{minutes}">
+            <input type="text" placeholder="Seconds" th:field="*{seconds}">
+        </div>
         <input type="text" placeholder="Calories" th:field="*{amountCalories}">
         <textarea rows="4" placeholder="description" th:field="*{description}"></textarea>
 

@@ -42,7 +42,7 @@ public class TrainingController {
         return "redirect:/trainingsList";
     }
 
-    @RequestMapping("/trainingsList")
+    @GetMapping("/trainingsList")
     public String showList(Model model) {
         model.addAttribute("trainings", trainingRepository.findAll());
         return "trainingsList";
