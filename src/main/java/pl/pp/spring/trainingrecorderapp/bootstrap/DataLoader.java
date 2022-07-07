@@ -38,7 +38,7 @@ public class DataLoader implements CommandLineRunner {
         training1.setAmountKilometers(5.5);
         training1.setDate(LocalDate.of(2022, Month.JUNE, 19));
 
-        training1.setDescription("bieg na przełaj");
+        training1.setDescription("cross country running");
 
         return training1;
     }
@@ -53,7 +53,7 @@ public class DataLoader implements CommandLineRunner {
         training2.setAmountKilometers(2.8);
         training2.setDate(LocalDate.of(2022, Month.JUNE, 20));
 
-        training2.setDescription("bieg po bieżni");
+        training2.setDescription("run on the treadmill");
 
         return training2;
     }

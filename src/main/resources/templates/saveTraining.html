@@ -18,9 +18,9 @@
     <form method="post" th:action="@{/saveTraining}" th:object="${training}">
         <input type="hidden" th:field="*{id}">
         <input type="date" th:field="*{date}">
-        <input type="text" placeholder="Kilometers" th:field="*{amountKilometers}">
+        <input type="text" placeholder="kilometers" th:field="*{amountKilometers}">
         <input type="text" placeholder="HH:MM:SS" th:field="*{fullTime}">
-        <input type="text" placeholder="Calories" th:field="*{amountCalories}">
+        <input type="text" placeholder="calories" th:field="*{amountCalories}">
         <textarea rows="4" placeholder="description" th:field="*{description}"></textarea>
 
         <input type="submit" value="Save">
