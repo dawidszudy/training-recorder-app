@@ -1,4 +1,4 @@
-# News Articles App
+# Training Recorder App
 
 ## General Information
 The small app, which allows users to record their running trainings and review them.
