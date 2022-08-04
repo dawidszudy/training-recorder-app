@@ -3,11 +3,14 @@ package pl.pp.spring.trainingrecorderapp.model;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
+import java.text.DecimalFormat;
 import java.time.LocalDate;
 
 @Entity
 @Table(name = "trainings")
 public class Training {
+
+    private static final DecimalFormat df = new DecimalFormat("0.0");
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -133,11 +136,12 @@ public class Training {
     }
 
     public String getAverageSpeedTime() {
-        int allSeconds = hours * 3600 + minutes * 60 + seconds;
-        double allMeters = amountKilometers * 1000;
-        double averageSpeed = (Math.round(allMeters / allSeconds * 100));
+        double allSeconds = hours * 3600 + minutes * 60 + seconds;
+        double time = allSeconds / 3600;
+        double distance = amountKilometers;
+        double averageSpeed = distance / time;
 
-        return averageSpeed / 100 + "";
+        return df.format(averageSpeed);
     }
 
 }
